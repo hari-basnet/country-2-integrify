@@ -1,0 +1,107 @@
+body {
+    max-width: 900px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../assets/images/brett-zeck-672527-unsplash.jpg");
+    background-size: cover;
+    /*     height: 100vh;
+   */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    font-family: 'Monoton', cursive;
+
+
+    margin: 0 auto;
+  }
+
+  .text-container{
+      color: black;
+  }
+  
+  .select-this {
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    font-size: 180%;
+    color: whitesmoke;
+    width: 100%;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    background-color: #E6C091;
+    border: 2px solid white;
+    border-radius: 25px;
+    color: rgb(28, 46, 240);
+    font-size: 65%;
+    margin-right: 45px;
+    padding: 10px 35px;
+    opacity: 0.6;
+    transition: 0.3s;
+    outline-style: none;
+  }
+  
+  button:hover {
+    opacity: 1;
+  }
+  
+  .fas {
+    background-color: #E6C091;
+    padding: 10px 25px;
+    border: 2px solid white;
+    color: rgb(28, 46, 240);
+    border-radius: 20px;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+  
+  .fas:hover{
+    opacity: 1;
+  }
+  .checked {
+    background-color: green;
+  }
+  
+  .input-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  input {
+    font-size: 80%;
+    text-align: center;
+    width: 100%;
+    margin: 10px auto;
+  }
+  
+  .result-section {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  .country-div {
+    border-radius: 20px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    margin: 5px auto;
+    text-align: center;
+    width: 60%;
+  }
+  
+  /* span{
+  
+  } */
+  
+  .video{
+      height: 100vh;
+      width: 100vw;
+  }
