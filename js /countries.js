@@ -1,4 +1,4 @@
-const countries = [
+const countriesObject = [
   {
     name: 'Afghanistan',
     capital: 'Kabul',
