@@ -41,7 +41,7 @@ body {
     border: 2px solid white;
     border-radius: 25px;
     color: rgb(28, 46, 240);
-    font-size: 65%;
+    font-size: 1rem;
     margin-right: 45px;
     padding: 10px 35px;
     opacity: 0.6;
@@ -75,17 +75,25 @@ body {
     flex-flow: row wrap;
   }
   .country-div {
+    font-family: 'Germania One', cursive;
+
     border-radius: 20px;
-    color: black;
+    background: rgba(53, 22, 47, 0.564);
+    color: rgb(155, 191, 197);
+
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+
     width: 200px;
     margin: 5px auto;
-    text-align: center;
+    padding: 5px auto;
   }
   
+  .flag-image{
+    width: 40%;
+  }
   /* span{
   
   } */
@@ -106,7 +114,4 @@ body {
       position: fixed;
   }
 
-  .flag-image{
-    width: 120px;
-    height: 90px;
-  }
+  
