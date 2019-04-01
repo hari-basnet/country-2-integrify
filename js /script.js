@@ -121,8 +121,17 @@ function mostSpokenLanguage(arr) {
     }
 
     console.log(myMap);
+    // myMap.forEach(element => {
+    //     console.log(element.keys(), element.value)
+    // })
 
-    myMap.filter()
+    for (let [country, times] of myMap){
+
+        
+        graphSection.innerHTML = `<p>${country}</p>
+        <div class="bar-length"></div> <p>${times}</p>`;
+        console.log(country, times);
+    }
 
 }
 

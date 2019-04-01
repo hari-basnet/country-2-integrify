@@ -114,3 +114,7 @@ body {
     height: 200px;
     background-color: coral;
   }
+  .bar-length{
+    height: 50px;
+    background-color: blueviolet;
+  }
