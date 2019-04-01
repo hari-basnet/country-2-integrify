@@ -40,17 +40,21 @@ const showCountries =  (arr) => {
 }
 
 const sortByName =  (arr) => {
-    if (searchInput.value) {
-        showCountries(filterCountries(arr.sort().reverse(), searchInput.value.toLowerCase()));
+    const sortedName = arr.sort(function(a,b) {
+        if(a.name < b.name) return -1;
+        if(a.name > b.name) return 1;
+        return 0;
+
+    });
+    if (clickState == 0) {
+        showCountries(filterCountries(sortedName, searchInput.value.toLowerCase()));
+        clickState = 1;
     } else {
-        showCountries(arr.sort().reverse());
+        showCountries(filterCountries(sortedName.reverse(), searchInput.value.toLowerCase()));
+        clickState = 0;
     }
 
 }
-
-
-    
-
 
 const sortByCapital = (arr) => {
 
@@ -93,11 +97,6 @@ const sortByPopulation = (arr) => {
 
 }
 //console.log(sortByCapital(countriesObject));
-
-
-
-
-
 subTitle.textContent = `Currently, we  have (${countriesObject.length}) countries`
 buttons.addEventListener('click', (e) => {
     
@@ -108,18 +107,13 @@ buttons.addEventListener('click', (e) => {
     }
      if (e.target.classList.contains('sort-by-capital')){
         sortByCapital(countriesObject);
-        e.target.classList.toggle('sort-by-capital');
+        e.target.classList.toggle('red');
     }
     if(e.target.classList.contains('sort-by-population')){
         sortByPopulation(countriesObject);
-        e.target.classList.toggle;
+        e.target.classList.toggle('red');
     }
-
-    // console.log(e.target.classList.contains('sort-by-name'));
-    // console.log(e.target.classList.contains('sort-by-capital'));
-    // console.log(e.target.classList.contains('sort-by-population'));
 });
-
 
 searchInput.addEventListener('keyup', (e) => {
     let searchTerm = e.target.value.toLowerCase();
@@ -127,3 +121,12 @@ searchInput.addEventListener('keyup', (e) => {
     let count = document.querySelectorAll('.country-div');
     subTitle.textContent = `Currently, we  have (${count.length}) countries`;
 });
+
+
+// make a function to show the chart 
+
+// create a set 
+// put the sorted data in set first 10
+// check the population 
+// divide total population and make percentage
+// use that percentage to the width of the div created
