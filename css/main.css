@@ -116,5 +116,9 @@ body {
   }
   .bar-length{
     height: 50px;
+    width: 35%;
     background-color: blueviolet;
+    margin-bottom: 10px;
   }
+
+  

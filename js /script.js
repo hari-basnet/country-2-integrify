@@ -2,7 +2,6 @@ const resultSection = document.querySelector('.result-section');
 const subTitle = document.querySelector('.sub-title');
 const searchInput = document.querySelector('.search-input')
 const buttons = document.querySelector('.button-container');
-const graphSection = document.querySelector('.graph-section');
 let clickState = 0;
 
 const createContent = (content) => {
@@ -124,20 +123,21 @@ function mostSpokenLanguage(arr) {
     // myMap.forEach(element => {
     //     console.log(element.keys(), element.value)
     // })
-
-    for (let [country, times] of myMap){
-
-        
-        graphSection.innerHTML = `<p>${country}</p>
-        <div class="bar-length"></div> <p>${times}</p>`;
-        console.log(country, times);
-    }
-
+    
 }
+
 
 
 // ################################################################### //
 mostSpokenLanguage(countriesObject);
+
+for(let i = 0; i <= 10; i++){
+    const graphSection = document.querySelector('.graph-section');
+
+    graphSection.innerHTML = `<p>Finland ${i}</p>
+    <div class="bar-length"></div>
+     `;  
+}
 //console.log(sortByCapital(countriesObject));
 subTitle.textContent = `Currently, we  have (${countriesObject.length}) countries`
 buttons.addEventListener('click', (e) => {
