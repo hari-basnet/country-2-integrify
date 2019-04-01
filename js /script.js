@@ -111,15 +111,15 @@ function mostSpokenLanguage(arr) {
     let mySet = new Set(joined);
     console.log(mySet);
 
-    let myMap = new Map();
+    let langData = [];
     for (let lang of mySet) {
-        let count = joined.filter(element => element === lang);
+        let repeatedLanguage = joined.filter(language => language === lang);
         //console.log(lang, count.length);
-        myMap.set(lang, count.length);
+       langData.push([lang,  repeatedLanguage.length]);
         //    console.log(count);
     }
 
-    console.log(myMap);
+    console.log(langData);
     // myMap.forEach(element => {
     //     console.log(element.keys(), element.value)
     // })
