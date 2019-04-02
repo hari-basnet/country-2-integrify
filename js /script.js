@@ -145,7 +145,6 @@ subTitle.textContent = `Currently, we  have (${countriesObject.length}) countrie
 // event listeners 
 buttons.addEventListener('click', (e) => {
 
-
     if (e.target.classList.contains('sort-by-name')) {
         sortByName(countriesObject);
         e.target.classList.toggle('red');
@@ -175,7 +174,5 @@ tenPop.addEventListener('click', (e) =>{
         graphSection.style.display = 'none';
         clickState = 0;
     }
-    // graphSection.style.display = 'block';
-    // e.target.classList.toggle('blue');
 })
 mostSpokenLanguage(countriesObject);
