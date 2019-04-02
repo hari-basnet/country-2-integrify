@@ -15,7 +15,7 @@ body {
   }
 
   .text-container{
-      color: black;
+      color: rgba(181, 110, 249, 0.824);
       font-family: 'Monoton', cursive;
   }
   
@@ -111,12 +111,11 @@ body {
   }
 
   .graph-section{
-    height: 200px;
-    background-color: coral;
+    display: none;
   }
   .bar-length{
-    height: 50px;
-    width: 35%;
+    display: flex;
+    flex-flow: column wrap;
     background-color: blueviolet;
     margin-bottom: 10px;
   }

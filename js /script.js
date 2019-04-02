@@ -2,6 +2,9 @@ const resultSection = document.querySelector('.result-section');
 const subTitle = document.querySelector('.sub-title');
 const searchInput = document.querySelector('.search-input')
 const buttons = document.querySelector('.button-container');
+const graphSection = document.querySelector('.graph-section');
+const tenPop = document.querySelector('.ten-pop');
+const tenLang = document.querySelector('.ten-lang');
 let clickState = 0;
 
 const createContent = (content) => {
@@ -13,7 +16,6 @@ const createContent = (content) => {
         <p>${languages.join(', ')}</p>
         <p>${population.toLocaleString()}</p>
     </div>`
-
 }
 
 const filterCountries = (arr, search) => {
@@ -80,11 +82,11 @@ const sortByCapital = (arr) => {
 }
 
 const sortByPopulation = (arr) => {
+
     const sortedPopulation = arr.sort(function (a, b) {
         if (a.population < b.population) return -1;
         if (a.population > b.population) return 1;
         return 0;
-
     });
 
     if (clickState == 0) {
@@ -97,49 +99,50 @@ const sortByPopulation = (arr) => {
 }
 
 // #################################################################### //
-function mostSpokenLanguage(arr) {
-
-    let allLanguages = [];
+const  mostSpokenLanguage = (arr) => {
+    // creating empty array and filtering and storing
+    let allLanguages = []; 
     arr.forEach((element) => {
-        allLanguages.push(element.languages.join(', '));
+        allLanguages.push(element.languages.join(', ')); // join makes array to string 
 
     })
-    // console.log(allLanguages);
+
+    // since all languages have array of group of string and single string 
+    // make the whole array to string and then turn them to single string 
     let joined = allLanguages.join(', ').split(', ');
-    //    console.log(joined);
 
+    // create the set and pass the array to get new values
     let mySet = new Set(joined);
-    console.log(mySet);
 
+    // create new array to store the language name and how many times they occur
     let langData = [];
     for (let lang of mySet) {
         let repeatedLanguage = joined.filter(language => language === lang);
-        //console.log(lang, count.length);
        langData.push([lang,  repeatedLanguage.length]);
-        //    console.log(count);
     }
+    langData.sort(function(a,b){ // sorts the langdata array
+        return b[1] - a[1];
+    })
 
-    console.log(langData);
-    // myMap.forEach(element => {
-    //     console.log(element.keys(), element.value)
-    // })
-    
+    // slicing the top ten array items 
+    let topten = langData.slice(0,10);
+    let sum = 0;
+    let width = 0;
+    topten.forEach((arr)=>{ // looping throught the array and creating html elements 
+        sum = sum + arr[1];
+        width = Math.floor((arr[1]/sum)* 100);
+        console.log(width);
+
+        graphSection.innerHTML += `<div><p>${arr[0]}</p>
+        <div class="bar-length" style ="height:20px; width:${width}%">${arr[1]}</div>
+        </div>`;  
+
+    }) 
 }
 
+subTitle.textContent = `Currently, we  have (${countriesObject.length}) countries`;
 
-
-// ################################################################### //
-mostSpokenLanguage(countriesObject);
-
-for(let i = 0; i <= 10; i++){
-    const graphSection = document.querySelector('.graph-section');
-
-    graphSection.innerHTML = `<p>Finland ${i}</p>
-    <div class="bar-length"></div>
-     `;  
-}
-//console.log(sortByCapital(countriesObject));
-subTitle.textContent = `Currently, we  have (${countriesObject.length}) countries`
+// event listeners 
 buttons.addEventListener('click', (e) => {
 
 
@@ -164,11 +167,14 @@ searchInput.addEventListener('keyup', (e) => {
     subTitle.textContent = `Currently, we  have (${count.length}) countries`;
 });
 
-
-// make a function to show the chart 
-
-// create a set 
-// put the sorted data in set first 10
-// check the population 
-// divide total population and make percentage
-// use that percentage to the width of the div created
+tenPop.addEventListener('click', (e) =>{
+    if(clickState===0) {
+        graphSection.style.display = 'block';
+        clickState=1
+        mostSpokenLanguage(countriesObject);
+    } else {
+        graphSection.style.display = 'none';
+        clickState=0
+    }
+    
+})
