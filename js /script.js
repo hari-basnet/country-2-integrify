@@ -168,13 +168,14 @@ searchInput.addEventListener('keyup', (e) => {
 });
 
 tenPop.addEventListener('click', (e) =>{
-    if(clickState===0) {
+    if(clickState === 0) {
         graphSection.style.display = 'block';
-        clickState=1
-        mostSpokenLanguage(countriesObject);
+        clickState = 1;
     } else {
         graphSection.style.display = 'none';
-        clickState=0
+        clickState = 0;
     }
-    
+    // graphSection.style.display = 'block';
+    // e.target.classList.toggle('blue');
 })
+mostSpokenLanguage(countriesObject);
