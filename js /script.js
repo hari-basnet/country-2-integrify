@@ -99,9 +99,9 @@ const sortByPopulation = (arr) => {
 }
 
 // #################################################################### //
-const  mostSpokenLanguage = (arr) => {
+const mostSpokenLanguage = (arr) => {
     // creating empty array and filtering and storing
-    let allLanguages = []; 
+    let allLanguages = [];
     arr.forEach((element) => {
         allLanguages.push(element.languages.join(', ')); // join makes array to string 
 
@@ -118,26 +118,26 @@ const  mostSpokenLanguage = (arr) => {
     let langData = [];
     for (let lang of mySet) {
         let repeatedLanguage = joined.filter(language => language === lang);
-       langData.push([lang,  repeatedLanguage.length]);
+        langData.push([lang, repeatedLanguage.length]);
     }
-    langData.sort(function(a,b){ // sorts the langdata array
+    langData.sort(function (a, b) { // sorts the langdata array
         return b[1] - a[1];
     })
 
     // slicing the top ten array items 
-    let topten = langData.slice(0,10);
+    let topten = langData.slice(0, 10);
     let sum = 0;
     let width = 0;
-    topten.forEach((arr)=>{ // looping throught the array and creating html elements 
+    topten.forEach((arr) => { // looping throught the array and creating html elements 
         sum = sum + arr[1];
-        width = Math.floor((arr[1]/sum)* 100);
+        width = Math.floor((arr[1] / sum) * 100);
         console.log(width);
 
         graphSection.innerHTML += `<div><p>${arr[0]}</p>
         <div class="bar-length" style ="height:20px; width:${width}%">${arr[1]}</div>
-        </div>`;  
+        </div>`;
 
-    }) 
+    })
 }
 
 subTitle.textContent = `Currently, we  have (${countriesObject.length}) countries`;
@@ -166,8 +166,8 @@ searchInput.addEventListener('keyup', (e) => {
     subTitle.textContent = `Currently, we  have (${count.length}) countries`;
 });
 
-tenPop.addEventListener('click', (e) =>{
-    if(clickState === 0) {
+tenPop.addEventListener('click', (e) => {
+    if (clickState === 0) {
         graphSection.style.display = 'block';
         clickState = 1;
     } else {
