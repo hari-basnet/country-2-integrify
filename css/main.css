@@ -112,12 +112,13 @@ body {
 
   .graph-section{
     display: none;
+    background: rgba(241, 235, 252, 0.701);
   }
   .bar-length{
     display: flex;
     flex-flow: column wrap;
     background-color: blueviolet;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   
