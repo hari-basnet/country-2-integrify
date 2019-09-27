@@ -1,124 +1,132 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-    max-width: 900px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    background-size: cover;
-    /*     height: 100vh;
-   */
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    margin: 0 auto;
-  }
+  max-width: 1280px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
 
-  .text-container{
-      color: rgba(181, 110, 249, 0.824);
-      font-family: 'Monoton', cursive;
-  }
-  
-  .select-this {
-    display: flex;
-    flex-flow: column wrap;
-    flex-basis: 60%;
-    justify-content: center;
-    align-items: center;
-    margin: 30px auto;
-    font-size: 180%;
-    color: whitesmoke;
-    width: 100%;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  button {
-    background-color: #E6C091;
-    border: 2px solid white;
-    border-radius: 25px;
-    color: rgb(28, 46, 240);
-    font-size: 0.8rem;
-    margin-right: 45px;
-    padding: 10px 35px;
-    opacity: 0.6;
-    transition: 0.3s;
-    outline-style: none;
-  }
-  
-  button:hover {
-    opacity: 1;
-  }
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
 
-  .checked {
-    background-color: green;
-  }
-  
-  .input-wrapper {
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  input {
-    font-size: 80%;
-    text-align: center;
-    width: 100%;
-    margin: 10px auto;
-  }
-  
-  .result-section {
-    display: flex;
-    flex-flow: row wrap;
-  }
-  .country-div {
-    font-family: 'Germania One', cursive;
+.text-container {
+  color: rgba(181, 110, 249, 0.824);
+  font-family: "Monoton", cursive;
+  margin-bottom: 30px;
+}
 
-    border-radius: 20px;
-    background: rgba(53, 22, 47, 0.564);
-    color: rgb(155, 191, 197);
+.select-this {
+  display: flex;
+  flex-flow: column wrap;
+  flex-basis: 60%;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  font-size: 180%;
+  color: whitesmoke;
+}
 
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
 
-    width: 200px;
-    margin: 5px auto;
-    padding: 5px auto;
-  }
-  
-  .flag-image{
-    width: 40%;
-  }
+button {
+  background-color: #e6c091;
+  border: 2px solid white;
+  border-radius: 25px;
+  color: rgb(28, 46, 240);
+  font-size: 0.8rem;
+  margin-right: 45px;
+  padding: 10px 35px;
+  opacity: 0.6;
+  transition: 0.3s;
+  outline-style: none;
+}
 
-  .background-video{
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -2;
-  }
+button:hover {
+  opacity: 1;
+}
 
-  video{
-      height: 100vh;
-      width: 100vw;
-      object-fit: cover;
-      position: fixed;
-  }
+.checked {
+  background-color: green;
+}
 
-  .graph-section{
-    display: none;
-    background: rgba(241, 235, 252, 0.701);
-  }
-  .bar-length{
-    display: flex;
-    flex-flow: column wrap;
-    background-color: blueviolet;
-    margin-bottom: 5px;
-  }
+.input-wrapper {
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+input {
+  border-radius: 50px;
+  font-size: 80%;
+  text-align: center;
+  margin: 10px auto;
+  width: 100%;
+  outline: none;
+  padding: 5px 20px;
+}
 
-  
+.result-section {
+  display: flex;
+  flex-flow: row wrap;
+}
+.country-div {
+  font-family: "Germania One", cursive;
+
+  border-radius: 20px;
+  background: rgba(53, 22, 47, 0.564);
+  color: rgb(155, 191, 197);
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  margin: 5px auto;
+  padding: 5px auto;
+}
+
+.flag-image {
+  width: 40%;
+}
+
+.background-video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+}
+
+.graph-section {
+  display: none;
+  background: rgba(241, 235, 252, 0.701);
+}
+.bar-length {
+  display: flex;
+  flex-flow: column wrap;
+  background-color: purple;
+  margin-bottom: 5px;
+}
+
+.chart-number {
+  color: yellow;
+}

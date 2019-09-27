@@ -134,7 +134,7 @@ const mostSpokenLanguage = (arr) => {
         console.log(width);
 
         graphSection.innerHTML += `<div><p>${arr[0]}</p>
-        <div class="bar-length" style ="height:20px; width:${width}%">${arr[1]}</div>
+        <div class="bar-length" style ="height:20px; width:${width}%"><p class="chart-number">${arr[1]}</p></div>
         </div>`;
 
     })
